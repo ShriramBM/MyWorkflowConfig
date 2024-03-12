@@ -48,3 +48,4 @@ nmap <F8> :TagbarToggle<CR>
 
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 inoremap <expr> <CR> pumvisible() ? coc#_select_confirm() : "<CR>"
+

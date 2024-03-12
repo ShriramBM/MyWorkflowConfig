@@ -25,5 +25,14 @@
 ## tmux
 ---
 - installation `sudo apt install tmux`
-- create a file in at `~/.tmux.conf`
+- create a file in at `~/.tmux.conf` paste the config
+- after creation reload the tmux by `tmux source-file ~/.tmux.conf` on shell
+
+## fish
+---
+- i am using fish for better workflow on terminal
+- create a fish config by `~/.config/fish/config.fish` file paste the config 
+
+
+
 

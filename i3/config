@@ -72,7 +72,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+x exec thunar
 
 #open browser 
-bindsym $mod+b exec google-chrome
+bindsym $mod+b exec qutebrowser 
 
 #open vscode
 bindsym $mod+c exec code
@@ -236,7 +236,7 @@ bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewi
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 client.focused          #00FF00 #00FF00 #000000 #00FF00
-client.unfocused        #000000 #000000 #FFFFFF #444444
+client.unfocused        #444444 #444444 #FFFFFF #444444
 client.focused_inactive #005500 #005500 #888888 #444444
 
 

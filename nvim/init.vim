@@ -19,7 +19,7 @@ noremap <M-s> <C-w>s
 noremap <M-v> <C-w>v
 call plug#begin()
 
-"Plug 'https://github.com/vim-airline/vim-airline' " Status bar
+Plug 'https://github.com/vim-airline/vim-airline' " Status bar
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview

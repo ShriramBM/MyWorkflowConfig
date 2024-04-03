@@ -1,18 +1,29 @@
+# general configuration like color 
 general {
   colors = true
   color_good = "#a3be8c"
   color_degraded = "#ebcb8b"
   color_bad = "#bf616a"
-  interval = 1
+  interval = 1 
   separator = "|"
 }
 
+# order you like 
 order += "wireless wlo1"
 order += "memory"
 order += "disk /"
 order += "cpu_usage"
 order += "battery all"
 order += "time"
+
+
+# each order configurations
+
+
+wireless wlo1 {
+  format_up = "WIFI: %essid (%quality)" 
+  format_down  = "WIFI: down"
+}
 
 memory {
   memory_used_method = classical
@@ -25,12 +36,6 @@ disk "/" {
 
 cpu_usage {
   format = "CPU: %usage"
-}
-
-
-wireless wlo1 {
-  format_up = "WIFI: %essid (%quality)" 
-  format_down  = "WIFI: down"
 }
 
 battery all {

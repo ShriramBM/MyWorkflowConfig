@@ -22,6 +22,10 @@
 - Need to practice some keymaps
 - after config you need to reload the wm by `mod+shift+r` it will update to new config
 
+## i3status
+---
+- just copy and paste the `config` file to `~/.config/i3status/config`
+
 ## tmux
 ---
 - installation `sudo apt install tmux`

@@ -1,0 +1,46 @@
+general {
+  colors = true
+  color_good = "#a3be8c"
+  color_degraded = "#ebcb8b"
+  color_bad = "#bf616a"
+  interval = 1
+  separator = "|"
+}
+
+order += "wireless wlo1"
+order += "memory"
+order += "disk /"
+order += "cpu_usage"
+order += "battery all"
+order += "time"
+
+memory {
+  memory_used_method = classical
+  format="RAM: %used / %total"
+}
+
+disk "/" {
+  format = "ROM: %used / %total"
+}
+
+cpu_usage {
+  format = "CPU: %usage"
+}
+
+
+wireless wlo1 {
+  format_up = "WIFI: %essid (%quality)" 
+  format_down  = "WIFI: down"
+}
+
+battery all {
+  path=/sys/class/power_supply/%d/uevent
+  format = "BAT: %percentage"
+  last_full_capacity = true
+  threshold_type=percentage
+  low_threshold=10
+}
+
+time {
+    format = "%Y-%m-%d %I:%M:%S %p"
+}

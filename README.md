@@ -3,6 +3,8 @@
 - Here you can find some configuration files like i3, tmux, nvim so on.....
 - Peppermint OS comes with debian is my distribution
 - I installed Peppermint OS XFCE4 edition but i use i3-wm
+- if you Execute `cloud_to_local.sh` it will take care about copy and paste of all my config
+- if you Execute `local_to_cloud.sh` it will sync the local configuration to git stuff
 
 ## nvim 
 
@@ -37,6 +39,8 @@
 - i am using fish for better workflow on terminal
 - create a fish config by `~/.config/fish/config.fish` file paste the config 
 
+## Conky
 
-
-
+- backgrond live time, data speed usage kind of stuff i love it
+- copy `conky_config` folder stuff to ~/.config/conkyfiles/ 
+- conky -c filename it is preloaded by i3 config file so no need to worry 

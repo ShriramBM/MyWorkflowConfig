@@ -14,11 +14,12 @@ order += "memory"
 order += "disk /"
 order += "cpu_usage"
 order += "battery all"
+order += "volume master"
+order += "cpu_temperature 0"
 order += "time"
 
 
 # each order configurations
-
 
 wireless wlo1 {
   format_up = "WIFI: %essid (%quality)" 
@@ -45,6 +46,20 @@ battery all {
   threshold_type=percentage
   low_threshold=10
 }
+
+volume master {
+    format = "VOL: %volume"
+    format_muted = "VOL: MUT"
+	device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
+cpu_temperature 0 {
+format = "TEMP: %degrees °C"
+path = "/sys/class/thermal/thermal_zone7/temp"
+}
+
 
 time {
     format = "%Y-%m-%d %I:%M:%S %p"

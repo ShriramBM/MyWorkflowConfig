@@ -1,5 +1,5 @@
 # Conky settings #
-background yes
+background yes 
 update_interval 30
 double_buffer yes
 no_buffers yes

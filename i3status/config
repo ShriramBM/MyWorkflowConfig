@@ -4,7 +4,7 @@ general {
   color_good = "#a3be8c"
   color_degraded = "#ebcb8b"
   color_bad = "#bf616a"
-  interval = 1 
+  interval = 5 
   separator = "|"
 }
 
@@ -56,8 +56,8 @@ volume master {
 }
 
 cpu_temperature 0 {
-format = "TEMP: %degrees °C"
-path = "/sys/class/thermal/thermal_zone7/temp"
+	format = "TEMP: %degrees °C"
+	path = "/sys/class/thermal/thermal_zone7/temp"
 }
 
 

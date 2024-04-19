@@ -22,7 +22,7 @@ order += "time"
 # each order configurations
 
 wireless wlo1 {
-  format_up = "WIFI: %essid (%quality)" 
+  format_up = "WIFI: CONNECTED (%quality)" 
   format_down  = "WIFI: down"
 }
 

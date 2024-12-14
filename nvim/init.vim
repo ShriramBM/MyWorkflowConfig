@@ -11,9 +11,9 @@
 :set completeopt-=preview " For No Previews
 :set clipboard=unnamedplus "for copy and paste from nvim to outside 
 				
-				
-" tab stuff										
 
+
+" tab stuff										
 nnoremap <C-t> :tabnew<CR>
 nnoremap <C-s> :tabnext<CR>
 
@@ -72,18 +72,24 @@ nmap <F8> :TagbarToggle<CR>
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 inoremap <expr> <CR> pumvisible() ? coc#_select_confirm() : "<CR>"
 
+" Mapping Ctrl + Shift + I to `coc-format`
+nmap <C-I> :call CocAction('format')<CR>
+
 if exists("syntax_on")
   syntax reset
 endif
 
-colorscheme vim 
-" cursorline line color 
-highlight CursorLine cterm=none ctermbg=darkgrey ctermfg=none guibg=#222300 guifg=none
-" Customize popup menu colors with dark grey
-highlight Pmenu      ctermbg=darkgrey guibg=#333333 guifg=#FFFFFF
-highlight PmenuSel   ctermbg=grey guibg=#666666 guifg=#FFFFFF
-highlight PmenuSbar  ctermbg=darkgrey guibg=#333333
-highlight PmenuThumb ctermbg=grey guibg=#666666
 
-" Set the background color for visual mod
-highlight Visual cterm=none ctermbg=green ctermfg=black guibg=#005f00 guifg=#ffffff
+" For beautiful java treesitter 
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "java" },  -- Ensure Java parser is installed
+  highlight = {
+    enable = true,                -- Enable syntax highlighting
+    additional_vim_regex_highlighting = false,  -- Disable Vim's default highlighting
+  },
+}
+EOF
+
+
+colorscheme retrobox

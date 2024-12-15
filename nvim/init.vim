@@ -10,13 +10,11 @@
 :set cursorline
 :set completeopt-=preview " For No Previews
 :set clipboard=unnamedplus "for copy and paste from nvim to outside 
-				
 
 
 " tab stuff										
 nnoremap <C-t> :tabnew<CR>
 nnoremap <C-s> :tabnext<CR>
-
 
 " Remap splitting commands to use Alt key
 noremap <M-h> <C-w> h
@@ -26,25 +24,18 @@ noremap <M-l> <C-w> l
 noremap <M-s> <C-w> s
 noremap <M-v> <C-w> v
 
-noremap E $
-noremap B 0
 				
-
-" turning off the arrow keys
-" nnoremap <Up> <Nop>
-" nnoremap <Down> <Nop>
-" nnoremap <Left> <Nop>
-" nnoremap <Right> <Nop>
-
 
 nnoremap <C-f> :NERDTreeFocus
 nnoremap <C-n> :NERDTreeToggle<cr> 
 nnoremap <C-b> :NERDTreeToggle<cr>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
+nnoremap <C-I> :call CocAction('format')<CR>
 nnoremap <C-p> :FZF<cr>
 
 call plug#begin()
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
+Plug 'vim-airline/vim-airline-themes' " Status bar themes
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
@@ -72,8 +63,6 @@ nmap <F8> :TagbarToggle<CR>
 inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 inoremap <expr> <CR> pumvisible() ? coc#_select_confirm() : "<CR>"
 
-" Mapping Ctrl + Shift + I to `coc-format`
-nmap <C-I> :call CocAction('format')<CR>
 
 if exists("syntax_on")
   syntax reset
@@ -91,5 +80,4 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-
-colorscheme retrobox
+colorscheme jellybeans

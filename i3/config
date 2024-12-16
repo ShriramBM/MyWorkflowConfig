@@ -251,7 +251,33 @@ set $lm eDP-1
 set $hdmi HDMI-1
 workspace 7 output $hdmi
 
-# color settings for window and others 
-#client.focused          #00FF00 #00FF00 #000000 #00FF00
-#client.unfocused        #444444 #444444 #FFFFFF #444444
-#client.focused_inactive #005500 #00550
+
+
+
+# Jellybean color scheme
+set $bg-color #151515
+set $inactive-bg-color #3b3b3b
+set $text-color #E4E4E4
+set $inactive-text-color #7a7a7a
+set $border-color #F9A8D4
+set $focused-border-color #FF00FF
+
+# Window colors
+client.unfocused          $focused-border-color $bg-color $text-color
+client.focused        $border-color $inactive-bg-color $inactive-text-color
+client.focused_inactive $border-color $inactive-bg-color $inactive-text-color
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+# Bar color
+bar {
+    status_command i3status
+    colors {
+        background $bg-color
+        statusline $text-color
+        separator  $inactive-bg-color
+        focused_workspace  $focused-border-color $bg-color $text-color
+        inactive_workspace $inactive-bg-color $inactive-text-color $inactive-bg-color
+    }
+}
+

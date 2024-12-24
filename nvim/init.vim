@@ -81,3 +81,6 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 colorscheme jellybeans
+" terminal ese key to normal mode for ease use
+tnoremap <Esc> <C-\><C-n>
+

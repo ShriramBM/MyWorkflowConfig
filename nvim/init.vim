@@ -8,9 +8,8 @@
 :set mouse=a
 :set nowrap
 :set cursorline
-:set completeopt-=preview " For No Previews
+:set completeopt=preview " For No Previews
 :set clipboard=unnamedplus "for copy and paste from nvim to outside 
-
 
 " tab stuff										
 nnoremap <C-t> :tabnew<CR>
@@ -24,7 +23,6 @@ noremap <M-l> <C-w> l
 noremap <M-s> <C-w> s
 noremap <M-v> <C-w> v
 
-				
 
 nnoremap <C-f> :NERDTreeFocus
 nnoremap <C-n> :NERDTreeToggle<cr> 
@@ -52,7 +50,9 @@ Plug 'https://github.com/wolandark/vim-live-server.git'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' } " react snippets
 Plug 'shaunsingh/solarized.nvim'
 Plug 'fatih/vim-go' "go stuff
+Plug 'https://github.com/lilydjwg/colorizer' " for css colors hightlight
 call plug#end()
+
 
 
 let g:NERDTreeDirArrowExpandable="+"
@@ -69,10 +69,10 @@ if exists("syntax_on")
 endif
 
 
-" For beautiful java treesitter 
+" For beautiful java treesitter color scheme
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "java" },  -- Ensure Java parser is installed
+  ensure_installed = { "java","html" },  -- Ensure Java parser is installed
   highlight = {
     enable = true,                -- Enable syntax highlighting
     additional_vim_regex_highlighting = false,  -- Disable Vim's default highlighting
@@ -81,6 +81,24 @@ require'nvim-treesitter.configs'.setup {
 EOF
 
 colorscheme jellybeans
+
 " terminal ese key to normal mode for ease use
 tnoremap <Esc> <C-\><C-n>
+
+" background transparent
+highlight Normal guibg=NONE ctermbg=NONE
+highlight NonText guibg=NONE ctermbg=NONE
+
+" Airline transparent
+let g:airline_theme='transparent'
+highlight AirlineNormal guibg=NONE ctermbg=NONE
+highlight AirlineInsert guibg=NONE ctermbg=NONE
+highlight AirlineVisual guibg=NONE ctermbg=NONE
+highlight AirlineReplace guibg=NONE ctermbg=NONE
+highlight AirlineCommand guibg=NONE ctermbg=NONE
+highlight AirlineInactive guibg=NONE ctermbg=NONE
+
+"line number transparent
+highlight LineNr guibg=NONE ctermbg=NONE
+highlight CursorLineNr guibg=NONE ctermbg=NONE
 

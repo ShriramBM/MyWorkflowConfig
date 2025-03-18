@@ -12,3 +12,8 @@ style = "Italic"
 [font.normal]
 family = "Maple mono"
 style = "Regular"
+
+[window]
+opacity = 0.5  # Adjust as needed (1.0 = Opaque, 0.0 = Fully Transparent)
+
+

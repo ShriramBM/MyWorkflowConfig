@@ -90,7 +90,7 @@ highlight Normal guibg=NONE ctermbg=NONE
 highlight NonText guibg=NONE ctermbg=NONE
 
 " Airline transparent
-let g:airline_theme='transparent'
+" let g:airline_theme='transparent'
 highlight AirlineNormal guibg=NONE ctermbg=NONE
 highlight AirlineInsert guibg=NONE ctermbg=NONE
 highlight AirlineVisual guibg=NONE ctermbg=NONE
@@ -101,4 +101,5 @@ highlight AirlineInactive guibg=NONE ctermbg=NONE
 "line number transparent
 highlight LineNr guibg=NONE ctermbg=NONE
 highlight CursorLineNr guibg=NONE ctermbg=NONE
+
 

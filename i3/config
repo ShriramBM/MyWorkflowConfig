@@ -2,7 +2,7 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
+
 
 # i3 config file (v4)
 #
@@ -24,7 +24,7 @@ font pango:maple Mono 8
 exec --no-startup-id dex --autostart --environment i3
 
 # picom
-exec --no-startup-id picom -b
+# exec --no-startup-id picom -b
 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -61,6 +61,9 @@ floating_modifier $mod
 
 # print screen
 bindsym $mod+Print exec xfce4-screenshooter
+
+# fullscreen
+bindsym $mod+f fullscreen toggle
 
 # kill focused window
 bindsym $mod+q kill
@@ -108,9 +111,6 @@ bindsym $mod+g split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -206,7 +206,7 @@ bindsym $mod+r mode "resize"
 ## User config
 
 # setup for title bar for Window
-default_border pixel 3
+default_border pixel 2
 
 #gaps between windows
 #gaps inner 3
@@ -224,13 +224,24 @@ bindsym $mod+t exec alacritty
 bindsym $mod+n exec rnote 
 bindsym $mod+o exec libreoffice 
 
+
+
 # bindsym $mod+m exec thunderbird
 # bindsym $mod+u exec blueman-manager
 
 # assign the application on perticular workspace
+assign [class="Alacritty"] 1
+
+assign [class="google-chrome"] 2
+assign [class="Google-chrome"] 2
+
 assign [class="firefox"] 2
+
 assign [class="rnote"] 4
+
 assign [class="libreoffice"] 3
+assign [class="Soffice"] 3
+
 assign [class="thunderbird"] 5
 
 # Background wallpaper
@@ -240,42 +251,23 @@ exec feh --bg-fill /usr/share/backgrounds/angry.jpg
 exec --no-startup-id xfce4-power-manager 
 
 #SETTING UP EXTERNAL MONITER
-set $lm eDP-1
-set $hdmi HDMI-1
-workspace 7 output $hdmi
+# set $lm eDP-1
+# set $hdmi HDMI-1
+# workspace 7 output $hdmi
 
-# color settings for window and others 
-#client.focused          #00FF00 #00FF00 #000000 #00FF00
-#client.unfocused        #444444 #444444 #FFFFFF #444444
-#client.focused_inactive #005500 #00550
+#SETTING UP EXTERNAL MONITER not checked but may work
+exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1
 
 
-
-
-# Jellybean color scheme
-set $bg-color #151515
-set $inactive-bg-color #3b3b3b
-set $text-color #E4E4E4
-set $inactive-text-color #7a7a7a
-set $border-color #F9A8D4
-set $focused-border-color #FF00FF
-
-# Window colors
-client.unfocused          $focused-border-color $bg-color $text-color
-client.focused        $border-color $inactive-bg-color $inactive-text-color
-client.focused_inactive $border-color $inactive-bg-color $inactive-text-color
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 # Bar color
 bar {
     status_command i3status
-    colors {
-        background $bg-color
-        statusline $text-color
-        separator  $inactive-bg-color
-        focused_workspace  $focused-border-color $bg-color $text-color
-        inactive_workspace $inactive-bg-color $inactive-text-color $inactive-bg-color
-    }
+    # colors {
+    #     background $bg-color
+    #     statusline $text-color
+    #     separator  $inactive-bg-color
+    #     focused_workspace  $focused-border-color $bg-color $text-color
+    #     inactive_workspace $inactive-bg-color $inactive-text-color $inactive-bg-color
+    # }
 }
 

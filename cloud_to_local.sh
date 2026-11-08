@@ -4,3 +4,6 @@ rsync -av --delete nvim/ ~/.config/nvim/
 rsync -av --delete fish/ ~/.config/fish/
 rsync -av --delete i3status/ ~/.config/i3status/
 rsync -av --delete conky_config/ ~/.config/conkyfiles/
+rsync -av --delete Xresources/ ~/.Xresources
+rsync -av --delete xrandr/ ~/.xrandr.sh 
+

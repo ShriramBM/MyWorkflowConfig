@@ -1,0 +1,18 @@
+XTerm*faceName: maple Mono
+XTerm*faceSize: 20
+
+XTerm.vt100.translations: #override \n\
+    Ctrl <Key>equal: larger-vt-font() \n\
+    Ctrl <Key>minus: smaller-vt-font() \n\
+    Ctrl <Key>0: set-vt-font(d) \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+
+XTerm*background: #000000
+XTerm*foreground: #00FF41
+XTerm*cursorColor: #00ff00
+XTerm*color2: #00cc00
+XTerm*color10: #00ff00
+
+XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false

@@ -1,3 +1,4 @@
+
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 
@@ -180,24 +181,36 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-## User config
 
-# setup for title bar for Window
+## User config
+# Borders
 default_border pixel 2
+default_floating_border pixel 2
+
+# Client colors (focused / unfocused / urgent)
+client.focused          #000000 #00FF41 #00FF41 #00FF41 #00FF41
+client.focused_inactive #000000 #003300 #00AA33 #003300 #003300
+client.unfocused        #000000 #1A1A1A #666666 #1A1A1A #1A1A1A
+client.urgent           #000000 #FF3366 #FFFFFF #FF3366 #FF3366
+client.placeholder      #000000 #000000 #FFFFFF #000000 #000000
+client.background       #000000
+
 
 # mouse tap controll
 exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1 
 
 # # open application
 # bindsym $mod+h exec nautilus
-bindsym $mod+x exec emacs
+bindsym $mod+x exec thunar
 bindsym $mod+c exec code
-bindsym $mod+b exec brave
+bindsym $mod+b exec google-chrome
 bindsym $mod+p exec pavucontrol
-bindsym $mod+t exec kitty
+bindsym $mod+t exec xterm
 bindsym $mod+n exec rnote 
 bindsym $mod+o exec libreoffice 
 
+# Background wallpaper
+exec feh --bg-fill /usr/share/backgrounds/goku.jpg
 
 
 # bindsym $mod+m exec thunderbird
@@ -213,11 +226,24 @@ exec --no-startup-id xfce4-power-manager
 # workspace 7 output $hdmi
 
 #SETTING UP EXTERNAL MONITER not checked but may work
-exec --no-startup-id xrandr \
-    --output eDP-1 --mode 1920x1080 \
-    --output HDMI-1 --mode 1920x1080 --same-as eDP-1
+exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --output HDMI-1 --mode 1920x1080 --same-as eDP-1
 
 #  i3status 
 bar {
     status_command i3status
+    position bottom
+    tray_output primary
+    font pango:Maple Mono 10
+
+    colors {
+        background #000000
+        statusline #00FF41
+        separator  #003300
+
+        focused_workspace  #00FF41 #00FF41 #000000
+        active_workspace   #003300 #003300 #00FF41
+        inactive_workspace #111111 #111111 #666666
+        urgent_workspace   #FF3366 #FF3366 #FFFFFF
+        binding_mode       #00FF41 #00FF41 #000000
+    }
 }
